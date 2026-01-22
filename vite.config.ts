@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/website/' : '/',
+  publicDir: 'public',
   server: {
     port: 5173,
     open: true,
@@ -12,5 +13,6 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
+    copyPublicDir: true,
   },
 })
