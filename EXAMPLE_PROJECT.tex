@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\textbf{Example Physics Research Project}}
+\author{}
+\date{}
+
+\begin{document}
+
+\title{\textbf{Example Physics Research Project}}
+
+\section*{Overview}
+This is an example project template. Replace this with your own research content. The system automatically extracts the Overview section as a summary on the project list.
+
+Add images, equations, and formatted text to showcase your research. All LaTeX formatting will be automatically rendered on the website.
+
+\section{Introduction}
+
+Welcome to your research portfolio! This template shows you how to structure your research projects for the Event Horizon portfolio website.
+
+The portfolio automatically parses LaTeX documents and renders them beautifully with:
+\begin{itemize}
+    \item Mathematical equation rendering
+    \item Image inclusion and display
+    \item Professional typography
+    \item Responsive design for all devices
+\end{itemize}
+
+\section{Mathematics Example}
+
+Here's an example of inline mathematics: $E = mc^2$, which can appear anywhere in your text.
+
+Display mathematics is shown centered and prominent:
+
+\begin{equation}
+    F = ma
+\end{equation}
+
+You can also use alignment:
+
+\begin{align}
+    a &= \frac{v - v_0}{t} \\
+    v &= v_0 + at \\
+    s &= v_0 t + \frac{1}{2}at^2
+\end{align}
+
+\section{Equations with References}
+
+\begin{equation}
+    \label{eq:einstein}
+    E^2 = (pc)^2 + (mc^2)^2
+\end{equation}
+
+You can reference equations like Equation \ref{eq:einstein} in your text.
+
+\section{Project Structure}
+
+Your project folder should contain:
+
+\begin{enumerate}
+    \item \textbf{Project_Name.tex} - Your main LaTeX file (required)
+    \item \textbf{image1.png, image2.jpg} - Images referenced in the document
+    \item \textbf{subdirectory/} - Optional folder for organizing images
+\end{enumerate}
+
+\section{Text Formatting}
+
+You can use various text formatting options:
+\begin{itemize}
+    \item \textbf{Bold text} for emphasis
+    \item \textit{Italic text} for different emphasis
+    \item \texttt{Monospace} for code or technical terms
+\end{itemize}
+
+\section{Images}
+
+Include images using the standard LaTeX command:
+
+\begin{figure}
+    \centering
+    \includegraphics{placeholder.png}
+    \caption{Example image caption - replace with your actual image}
+\end{figure}
+
+\section{Tips for Success}
+
+\begin{enumerate}
+    \item \textbf{Keep sections organized} - Use \texttt{\textbackslash section} and \texttt{\textbackslash subsection}
+    \item \textbf{Add descriptive captions} - Figures should be self-explanatory
+    \item \textbf{Use meaningful labels} - Reference equations and figures by label
+    \item \textbf{Optimize images} - Compress before adding to project folder
+    \item \textbf{Use standard LaTeX} - Avoid custom packages if possible
+\end{enumerate}
+
+\section{Supported Features}
+
+\subsection{Equations}
+
+All major equation environments are supported:
+\begin{align*}
+    \text{equation, align, gather, eqnarray, displaystyle}
+\end{align*}
+
+\subsection{Lists}
+
+Both itemize and enumerate lists work perfectly with proper styling.
+
+\subsection{Citations and References}
+
+Use standard citation commands:
+\begin{itemize}
+    \item \verb|\cite{ref}| for general citations
+    \item \verb|\citep{ref}| for parenthetical citations  
+    \item \verb|\citet{ref}| for textual citations
+\end{itemize}
+
+\subsection{Figures}
+
+You can include figures with:
+\begin{itemize}
+    \item PNG, JPG, JPEG, GIF, SVG, WebP formats
+    \item Automatic scaling and optimization
+    \item Captions and figure references
+\end{itemize}
+
+\section{Next Steps}
+
+\begin{enumerate}
+    \item \textbf{Customize} - Replace this template with your actual research
+    \item \textbf{Add images} - Place your figures in the project folder
+    \item \textbf{Build locally} - Run \verb|npm run dev| to preview
+    \item \textbf{Deploy} - Push to GitHub or run \verb|npm run deploy|
+\end{enumerate}
+
+\section{Questions or Issues?}
+
+\begin{itemize}
+    \item Check SETUP\_GUIDE.md for detailed setup instructions
+    \item Review README.md for feature documentation
+    \item Ensure your .tex file syntax is correct
+    \item Verify images exist in the project folder
+\end{itemize}
+
+\end{document}

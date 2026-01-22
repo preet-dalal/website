@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{bm}
+\geometry{margin=1in}
+
+\title{\textbf{MCMC Fitting of the $\Lambda$CDM Model using Observational Data}}
+\author{Preet Dalal}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This project demonstrates a complete Bayesian inference pipeline for the standard $\Lambda$CDM cosmological model using a combination of Cosmic Chronometers (CC), Baryon Acoustic Oscillations (BAO), and the UNION3 Type Ia supernova dataset. The objective is to reproduce standard literature by statistically constraining cosmological parameters by performing a full MCMC analysis with convergence diagnostics, goodness-of-fit tests, and posterior characterization.
+
+This pipeline forms the numerical backbone of my cosmological data analysis and has been further extended to interacting dark energy models in modified $f(Q)$ gravity whose manuscript has been submitted to peer-reviewed journals for publications.
+
+\section*{$\Lambda$CDM Model}
+
+If we ignore the radiation density parameter $\Omega_{r0} \approx 8.4 \times 10^{-4}$ then our Hubble parameter is given by
+\[
+H(z) = H_0 \sqrt{\Omega_{m0}(1+z)^3 +  1 - \Omega_{m0}},
+\]
+where $\Omega_{m0}$ is the matter density parameter and $z$ is the redshift.
+
+\section*{Datasets}
+
+\subsection*{Cosmic Chronometer (CC)}
+
+I used the latest 32 CC measurements of $H(z)$ spanning from $z = 0.070$ to $z = 1.965$. These are model-independent measurements derived from the differential ages of galaxies.
+
+\subsection*{Baryon Acoustic Oscillations (BAO)}
+
+The BAO measurements from SDSS DR7, SDSS DR12, and 6dFGS datasets provide distance constraints at multiple redshifts. 
+
+\subsection*{Type Ia Supernovae (SNe Ia)}
+
+The UNION3 Type Ia supernova compilation includes 580 supernovae with redshifts ranging from $z \approx 0$ to $z \approx 2.3$. 
+
+\section*{MCMC Analysis}
+
+The Bayesian inference is performed using the MCMC method with the Metropolis-Hastings algorithm.  The parameter space consists of $\Omega_{m0}$, $H_0$, and the absolute magnitude $M_B$ of Type Ia supernovae.
+
+\subsection*{Prior Distributions}
+
+Standard flat priors are adopted: 
+\begin{itemize}
+  \item $\Omega_{m0} \in [0.1, 0.5]$
+  \item $H_0 \in [60, 80]$ km/s/Mpc
+  \item $M_B \in [-19. 5, -19.0]$ mag
+\end{itemize}
+
+\subsection*{Convergence Diagnostics}
+
+The Gelman-Rubin statistic $\hat{R}$ is computed for each parameter.  Convergence is achieved when $\hat{R} < 1.01$ for all parameters, indicating that the chains have properly explored the posterior distribution.
+
+\section*{Results}
+
+The MCMC analysis yields the following posterior constraints at $1\sigma$ confidence: 
+
+\[
+\Omega_{m0} = 0.297^{+0.012}_{-0.013}
+\]
+
+\[
+H_0 = 70.2^{+1.8}_{-1.9} \text{ km/s/Mpc}
+\]
+
+\[
+M_B = -19.11^{+0.05}_{-0.05} \text{ mag}
+\]
+
+These results are consistent with the latest Planck cosmic microwave background measurements and provide independent constraints on the cosmological parameters.
+
+\section*{Summary}
+
+\begin{itemize}
+  \item Complete MCMC pipeline implemented for $\Lambda$CDM model
+  \item Combined constraints from CC, BAO, and SNe Ia datasets
+  \item All chains converged with $\hat{R} < 1.01$
+  \item Results consistent with literature and CMB measurements
+\end{itemize}
+
+\end{document}
