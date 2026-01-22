@@ -71,11 +71,16 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white mb-6 border-b-2 border-orange-500 pb-3">About</h2>
             <div className="glass-card p-8 rounded-xl">
               <p className="text-gray-200 text-lg leading-relaxed mb-4">
-                Welcome to my academic portfolio. I am a physics researcher with a passion for understanding the fundamental laws of the universe. My work spans theoretical physics, cosmology, and computational methods.
+                I am a physics graduate student at CHARUSAT University, India, pursuing my M.Sc. in Physics with a focus on General Relativity, Astrophysics, and Computational Physics. I am currently working on testing the spacetime geometry of Sgr A* using the relativistic orbit of the S2 star.
               </p>
-              <p className="text-gray-300 text-base leading-relaxed">
-                This portfolio showcases my research projects, academic work, and computational contributions to the field of physics.
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
+                My research interests include black hole physics, modified gravity theories, cosmological parameter estimation, and computational astrophysics. I am passionate about using numerical methods and Bayesian analysis to constrain theoretical models with observational data.
               </p>
+              <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                <span>📧 <a href="mailto:pdalal2003@gmail.com" className="text-orange-400 hover:text-orange-300">pdalal2003@gmail.com</a></span>
+                <span>📍 Gujarat, India</span>
+                <span>🔗 <a href="https://www.linkedin.com/in/preet-dalal/" className="text-orange-400 hover:text-orange-300" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+              </div>
             </div>
           </motion.section>
 
@@ -89,18 +94,20 @@ export default function Home() {
             <div className="space-y-4">
               <div className="glass-card p-6 rounded-xl">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white">Ph.D. in Physics</h3>
-                  <span className="text-sm text-orange-400">In Progress</span>
+                  <h3 className="text-xl font-bold text-white">M.Sc. in Physics</h3>
+                  <span className="text-sm text-orange-400">2024 – 2026 (Expected)</span>
                 </div>
-                <p className="text-gray-400 mb-2">University / Institution</p>
-                <p className="text-gray-300 text-sm">Specialization in theoretical physics and cosmology</p>
+                <p className="text-gray-400 mb-2">CHARUSAT University, India</p>
+                <p className="text-gray-300 text-sm mb-2">Cumulative GPA: 8.26 / 10 (Semesters I–III)</p>
+                <p className="text-gray-300 text-sm italic">Core Focus: General Relativity and Astrophysics, Computational Physics, Classical Mechanics, Electrodynamics, Quantum Mechanics</p>
               </div>
               <div className="glass-card p-6 rounded-xl">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white">B.S. in Physics</h3>
-                  <span className="text-sm text-orange-400">Completed</span>
+                  <h3 className="text-xl font-bold text-white">B.Sc. in Physics</h3>
+                  <span className="text-sm text-orange-400">2021 – 2024</span>
                 </div>
-                <p className="text-gray-400">University / Institution</p>
+                <p className="text-gray-400 mb-2">Sardar Patel University, India</p>
+                <p className="text-gray-300 text-sm">Cumulative GPA: 9.3 / 10 • <span className="text-orange-400 font-semibold">Institute Gold Medalist</span></p>
               </div>
             </div>
           </motion.section>
@@ -114,20 +121,20 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white mb-6 border-b-2 border-orange-500 pb-3">Research Interests</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-lg font-bold text-orange-400 mb-2">Theoretical Physics</h3>
-                <p className="text-gray-300 text-sm">General relativity, quantum mechanics, and field theory</p>
+                <h3 className="text-lg font-bold text-orange-400 mb-2">Black Hole Physics</h3>
+                <p className="text-gray-300 text-sm">Regular black holes, naked singularities, and relativistic stellar orbits (S2 star)</p>
+              </div>
+              <div className="glass-card p-6 rounded-xl">
+                <h3 className="text-lg font-bold text-orange-400 mb-2">Galactic Center Physics</h3>
+                <p className="text-gray-300 text-sm">Spacetime geometry testing around Sgr A* using stellar dynamics</p>
               </div>
               <div className="glass-card p-6 rounded-xl">
                 <h3 className="text-lg font-bold text-orange-400 mb-2">Cosmology</h3>
-                <p className="text-gray-300 text-sm">Universe expansion, dark matter, and large-scale structure</p>
+                <p className="text-gray-300 text-sm">Cosmological parameter estimation, interacting dark energy models, and ΛCDM</p>
               </div>
               <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-lg font-bold text-orange-400 mb-2">Computational Methods</h3>
-                <p className="text-gray-300 text-sm">Numerical simulations and data analysis techniques</p>
-              </div>
-              <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-lg font-bold text-orange-400 mb-2">Astrophysics</h3>
-                <p className="text-gray-300 text-sm">Black holes, gravitational waves, and stellar evolution</p>
+                <h3 className="text-lg font-bold text-orange-400 mb-2">Modified Gravity & Computational Methods</h3>
+                <p className="text-gray-300 text-sm">f(Q) gravity, mathematical modeling, Bayesian MCMC, and numerical simulations</p>
               </div>
             </div>
           </motion.section>
