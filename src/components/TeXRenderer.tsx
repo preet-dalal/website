@@ -52,6 +52,9 @@ function parseAndRender(texContent: string, images: Record<string, string>): str
   const mathBlocks: { [key: string]: string } = {}
   let mathCounter = 0
 
+  // PHASE 0: Handle texorpdfstring BEFORE math extraction (critical order)
+  html = html.replace(/\\texorpdfstring\{[^}]*\}\{([^}]*)\}/g, '$1')
+
   // PHASE 1: Extract and preserve math
   html = html.replace(/\\\[([\s\S]*?)\\\]/g, (match, math) => {
     const key = `__MATH_DISPLAY_${mathCounter}__`
@@ -162,7 +165,6 @@ function parseAndRender(texContent: string, images: Record<string, string>): str
   html = html.replace(/\\textsc\{([^}]+)\}/g, '<span class="uppercase">$1</span>')
   html = html.replace(/\\textrm\{([^}]+)\}/g, '$1')
   html = html.replace(/\\textsf\{([^}]+)\}/g, '$1')
-  html = html.replace(/\\texorpdfstring\{([^}]*)\}\{([^}]*)\}/g, '$2')
 
   // Handle images
   html = html.replace(/\\includegraphics(?:\s*\[[^\]]*\])?\s*\{([^}]+)\}/g, (match, imagePath) => {

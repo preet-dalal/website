@@ -1,0 +1,109 @@
+\documentclass[10pt,a4paper]{article}
+
+% -------------------- Page Geometry --------------------
+\usepackage[left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm]{geometry}
+
+% -------------------- Formatting --------------------
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+
+% Kill extra vertical spacing
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+
+% Section formatting (tight)
+\titleformat{\section}{\small\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{3pt}
+
+% Itemize spacing (tight)
+\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\begin{document}
+
+%---------------- HEADER ----------------%
+\begin{center}
+    {\Large \textbf{Preet Dalal}}\\[2pt]
+    Gujarat, India \\[2pt]
+    \href{mailto:pdalal2003@gmail.com}{pdalal2003@gmail.com} \,|\, +91 9104156964 \\[2pt]
+    \href{https://www.linkedin.com/in/preet-dalal/}{LinkedIn} \,|\, 
+    \href{https://github.com/}{GitHub}
+\end{center}
+
+% -------------------- Research Interests --------------------
+\section*{Research Interests}
+Black Hole Physics, Relativistic stellar orbits (S2 star), Galactic Center physics, Computational astrophysics,
+Modified gravity, Mathematical Modelling, Regular Blackholes, Naked Singularities, Cosmological parameter estimation, Interacting dark energy models.
+
+% -------------------- Education --------------------
+\section*{Education}
+\textbf{M.Sc. in Physics}, CHARUSAT University, India \hfill 2024 -- 2026 (Expected) \\
+Cumulative GPA: 8.26 / 10 (Semesters I--III) \\
+\textit{Core Focus:} General Relativity and Astrophysics, Computational Physics, Classical Mechanics, Electrodynamics, Quantum Mechanics.
+
+\textbf{B.Sc. in Physics}, Sardar Patel University, India \hfill 2021 -- 2024 \\
+Cumulative GPA: 9.3 / 10 (Institute Gold Medalist)
+
+% -------------------- Research Experience --------------------
+\section*{Research Experience}
+
+\textbf{Master’s Project:} 
+\textit{Testing the spacetime geometry of Sgr A* with the relativistic orbit of the S2 star} \\
+Supervisor: Dr. Parth Bambhaniya, University of São Paulo -- Brazil \hfill July 2025 -- Ongoing \\ 
+\phantom{Supervisor:} Dr. Bina Patel, CHARUSAT Univeristy -- India 
+\begin{itemize}
+    \item Derived the general timelike orbit equation and the conserved quantities for spherically symmetric and static spacetimes.
+    \item Performed a comprehensive literature survey on relativistic stellar dynamics around Sgr A*.
+    \item Implemented Bayesian parameter estimation methods using PyGRO and MCMC sampling to constrain spacetime geometries using existing observational data of S2 star.
+    \item Obtained physical constraints on charged, non-singular, and naked singularity spacetime models that are consistent with the shadow constraints of Sgr A*.
+    \item Performed model selection against Schwarzschild spacetime using Akaike and Bayesian Information Criteria (AIC, BIC).
+\end{itemize}
+
+\textbf{Internship Research Project:}
+\textit{Interacting Dark Energy in $f(Q)$ Gravity} \\
+Supervisor: Dr. P. K. Sahoo, BITS Pilani Hyderabad -- India\hfill May 2025 -- June 2025
+\begin{itemize}
+    \item Studied the origin of $f(Q)$ gravity and similar modified gravities from the Einstein--Hilbert action and its teleparallel formulation.
+    \item Used modified Friedmann field equations for flat FLRW spacetime in $f(Q)$ gravity.
+    \item Developed and analyzed a linear interacting dark energy model within a $\Lambda$CDM-mimicking $f(Q)$ framework.
+    \item Constrained cosmological and interaction parameters using BAO, CMB, and multiple supernova datasets.
+    \item Studied background cosmological evolution and growth of structure using redshift-space distortion (RSD) data.
+\end{itemize}
+
+% -------------------- Publications --------------------
+\section*{Publications}
+\noindent
+P. Bambhaniya, \textbf{P. Dalal}, R. Della Monica, et al.,  
+\textit{Testing the Spacetime Geometry of Sgr A* with the Relativistic Orbit of S2 star}, in preparation. \\
+A. Kolhatkar, \textbf{P. Dalal}, P. K. Sahoo,  
+\textit{Structural constraints on interacting dark sector in $ \Lambda $CDM-mimicking \texorpdfstring{$ f(Q) $}{Lg} gravity}, in preparation.
+
+% -------------------- Technical Skills --------------------
+\section*{Technical Skills}
+\noindent \textbf{Languages/Tools:} Python (NumPy, SciPy, Matplotlib, SymPy, Pandas), C/C+, Mathematica, LaTeX, Linux/Bash. \\
+\textbf{Astrophysics Libraries:} \texttt{PyGRO}, \texttt{Cobaya}, \texttt{emcee}, \texttt{Astropy}, \texttt{CLASS/CAMB}. \\
+\textbf{Numerical Methods:} Numerical integration of ODEs (Runge--Kutta), Geodesic integration, Bayesian MCMC, Statistical model comparison, Phase-space stability analysis.
+
+% -------------------- Academic Achievements --------------------
+\section*{Academic Achievements}
+\begin{itemize}
+    \item \textbf{IIT JAM (Physics):} All India Rank 401 (Top 2.7\% of $\sim$15,000 candidates) \hfill 2024
+    \item \textbf{NGPE Topper:} State Topper (Top 1\%) in National Graduate Physics Examination, IAPT \hfill 2024
+    \item \textbf{Gold Medal:} Institute Gold Medal for highest academic standing in B.Sc. Physics \hfill 2024
+    \item \textbf{INSPIRE Scholarship:} Awarded by DST, Govt. of India (Top 1\% in Class XII) \hfill 2020
+\end{itemize}
+
+% -------------------- Other Projects --------------------
+\section*{Other Projects}
+\noindent \textbf{Post-Newtonian Analysis:} Derived 1PN corrections for Schwarzschild and RN spacetimes to evaluate the impact of charge-to-mass ratios on perihelion precession. \\
+\textbf{Dynamical Systems in Cosmology:} Constructed autonomous systems for modified gravity models; performed Jacobian stability analysis to identify viable cosmic evolution eras.
+
+\end{document}

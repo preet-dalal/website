@@ -51,6 +51,9 @@ function convertLaTeXToHTML(texContent: string): string {
   const mathBlocks: { [key: string]: string } = {}
   let mathCounter = 0
 
+  // PHASE 0: Handle texorpdfstring BEFORE math extraction (critical order)
+  html = html.replace(/\\texorpdfstring\{[^}]*\}\{([^}]*)\}/g, '$1')
+
   // PHASE 1: Extract and preserve math (use special markers that won't be HTML-escaped)
   html = html.replace(/\\\[([\s\S]*?)\\\]/g, (match, math) => {
     const key = `__MATH_DISPLAY_${mathCounter}__`
@@ -139,13 +142,14 @@ function convertLaTeXToHTML(texContent: string): string {
     titleHtml += `<p class="text-lg text-gray-400 mb-2">${escapeHtml(authorMatch[1])}</p>\n`
   }
   if (dateMatch) {
-    titleHtml += `<p class="text-sm text-gray-500 mb-8">${escapeHtml(dateMatch[1])}</p>\n`
+    let dateText = dateMatch[1].replace(/\\today/g, new Date().toLocaleDateString())
+    titleHtml += `<p class="text-sm text-gray-500 mb-8">${escapeHtml(dateText)}</p>\n`
   }
 
   html = html.replace(/\\title\{[^}]*\}/g, '')
   html = html.replace(/\\author\{[^}]*\}/g, '')
   html = html.replace(/\\date\{[^}]*\}/g, '')
-  html = html.replace(/\\today/g, '')
+  html = html.replace(/\\today/g, new Date().toLocaleDateString())
 
   // PHASE 4: Convert structure
   html = html.replace(/\\section\*?\{([^}]+)\}/g, '<h2 class="text-4xl font-bold mt-12 mb-6 text-white border-b-2 border-orange-500 pb-3">$1</h2>')
@@ -161,7 +165,6 @@ function convertLaTeXToHTML(texContent: string): string {
   html = html.replace(/\\textsc\{([^}]+)\}/g, '<span class="uppercase">$1</span>')
   html = html.replace(/\\textrm\{([^}]+)\}/g, '$1')
   html = html.replace(/\\textsf\{([^}]+)\}/g, '$1')
-  html = html.replace(/\\texorpdfstring\{([^}]*)\}\{([^}]*)\}/g, '$2')
 
   // Lists
   html = html.replace(/\\begin\{itemize\}([\s\S]*?)\\end\{itemize\}/g, (match, items) => {
