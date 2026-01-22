@@ -11,7 +11,8 @@ export default function ProjectPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/projectIndex.json')
+    const basePath = import.meta.env.BASE_URL
+    fetch(`${basePath}projectIndex.json`)
       .then((res) => res.json())
       .then((projects: Project[]) => {
         const found = projects.find((p) => p.slug === slug)

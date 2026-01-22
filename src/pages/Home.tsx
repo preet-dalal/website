@@ -10,11 +10,12 @@ export default function Home() {
   const [mainContent, setMainContent] = useState<string>('')
 
   useEffect(() => {
+    const basePath = import.meta.env.BASE_URL
     Promise.all([
-      fetch('/projectIndex.json')
+      fetch(`${basePath}projectIndex.json`)
         .then((res) => res.json())
         .catch(() => []),
-      fetch('/main.tex')
+      fetch(`${basePath}main.tex`)
         .then((res) => res.text())
         .catch(() => ''),
     ])
