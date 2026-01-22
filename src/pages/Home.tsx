@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import TeXRenderer from '../components/TeXRenderer'
+import LaTeXDocument from '../components/LaTeXDocument'
 import type { Project } from '../types'
 
 export default function Home() {
@@ -11,12 +11,16 @@ export default function Home() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/projectIndex.json').then((res) => res.json()),
-      fetch('/main.tex').then((res) => res.text()),
+      fetch('/projectIndex.json')
+        .then((res) => res.json())
+        .catch(() => []),
+      fetch('/main.tex')
+        .then((res) => res.text())
+        .catch(() => ''),
     ])
       .then(([projectsData, mainTexData]) => {
-        setProjects(projectsData)
-        setMainContent(mainTexData)
+        setProjects(Array.isArray(projectsData) ? projectsData : [])
+        setMainContent(mainTexData || '')
         setLoading(false)
       })
       .catch((err) => {
@@ -56,7 +60,7 @@ export default function Home() {
           </motion.div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 pb-20">
+        <main className="max-w-4xl mx-auto px-4 pb-20">
           {/* Main Research Content */}
           {mainContent && (
             <motion.article
@@ -65,9 +69,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-20 glass-card p-8 rounded-xl"
             >
-              <div className="prose-tex">
-                <TeXRenderer content={mainContent} images={{}} />
-              </div>
+              <LaTeXDocument content={mainContent} />
             </motion.article>
           )}
 
